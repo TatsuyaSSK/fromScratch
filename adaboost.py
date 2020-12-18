@@ -80,7 +80,6 @@ class Adaboost():
             predictions = clf.predict(X)
 
             indicator = np.array(self.transform(predictions, y))
-            print(indicator)
             # 誤分類した観測値の重みを増し、正しく分類した観測値の重みを減らす
             w *= np.exp(clf.alpha * indicator)
 
